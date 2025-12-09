@@ -14,7 +14,8 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//input[@id='password']")WebElement Password;
 	@FindBy(xpath = "//select[@id='user_type']")WebElement UserType;
 	@FindBy(xpath = "//button[@name='Create']") WebElement Save;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")WebElement Alert;
+	//@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")WebElement Alert;
+	@FindBy(xpath ="//button[@aria-hidden='true']") WebElement Alert;
 	
 	public WebDriver driver;
 	
@@ -22,7 +23,8 @@ public class AdminUsersPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickMoreInfo() {
+	public void clickMoreInfo() 
+	{
 		AdminUserMoreinfo.click();
 	}
 	public void clickNew()
@@ -42,12 +44,12 @@ public class AdminUsersPage {
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.selectByVisibleText(UserType, "Admin");
 	}
-	public void clickSave() {
+	public void clickSave()
+	{
 		Save.click();
-		
 	}
-	public boolean isAlertDisplayed() {
-		return Alert.isDisplayed();
-		
+	public boolean isAlertDisplayed() 
+	{
+		return Alert.isDisplayed();	
 	}
 }

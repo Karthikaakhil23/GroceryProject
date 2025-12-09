@@ -36,7 +36,6 @@ public class LoginPage {
 	{
 		return dashboard.isDisplayed();
 	}
-	
 	public boolean isAlertDisplayed()
 	{
 		return alert.isDisplayed();
