@@ -13,7 +13,7 @@ import org.openqa.selenium.io.FileHandler;
 public class ScreenShotUtilities {
 	public void getScreenShot(WebDriver driver,String failedTestCase) throws IOException
 	{
-		TakesScreenshot scrShot = (TakesScreenshot) driver; // TakesScreenshot capture the current situation of the
+		TakesScreenshot scrShot = (TakesScreenshot) driver; // TakesScreenshot interface capture the current situation of the
 															// browser
 		File screenShot = scrShot.getScreenshotAs(OutputType.FILE);
 		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());

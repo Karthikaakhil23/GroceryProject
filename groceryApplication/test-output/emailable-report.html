@@ -9,60 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Multibrowsertesting</th></tr>
-<tr><td><a href="#t0">Chrometest</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">5,227</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Chrometest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">12,861</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Multibrowsertesting</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Chrometest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">testscript.LoginTest</td><td><a href="#m0">verifyUserIsAbleToLoginUsingIncorrectUsernameAndcorrectPassword</a></td><td rowspan="1">1765254609572</td><td rowspan="1">331</td></tr><tr class="failedeven"><td><a href="#m1">verifyUserIsAbleToLoginUsingValidCredentials</a></td><td rowspan="1">1765254609544</td><td rowspan="1">269</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Multibrowsertesting</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Chrometest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testscript.ManageNewsTest</td><td><a href="#m0">VerifyUserIsAbleToEnterTheManageNews</a></td><td rowspan="1">1765515494523</td><td rowspan="1">5466</td></tr></tbody>
 </table>
-<h2>Chrometest</h2><h3 id="m0">testscript.LoginTest#verifyUserIsAbleToLoginUsingIncorrectUsernameAndcorrectPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.io.IOException: Stream Closed
-	at java.base/java.io.FileInputStream.available0(Native Method)
-	at java.base/java.io.FileInputStream.available(FileInputStream.java:473)
-	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:428)
-	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:399)
-	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
-	at java.base/java.io.PushbackInputStream.read(PushbackInputStream.java:197)
-	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.fill(ZipArchiveInputStream.java:861)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.readFromInflater(ZipArchiveInputStream.java:650)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.readDeflated(ZipArchiveInputStream.java:625)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.read(ZipArchiveInputStream.java:528)
-	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.read(ZipArchiveThresholdInputStream.java:80)
-	at org.apache.poi.util.IOUtils.toByteArray(IOUtils.java:240)
-	at org.apache.poi.util.IOUtils.toByteArray(IOUtils.java:203)
-	at org.apache.poi.openxml4j.util.ZipArchiveFakeEntry.&lt;init&gt;(ZipArchiveFakeEntry.java:82)
-	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:98)
-	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:132)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:319)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:59)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:290)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:286)
-	at utilities.ExcelUtilities.getStringData(ExcelUtilities.java:22)
-	at testscript.LoginTest.verifyUserIsAbleToLoginUsingIncorrectUsernameAndcorrectPassword(LoginTest.java:27)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">testscript.LoginTest#verifyUserIsAbleToLoginUsingValidCredentials</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException: No valid entries or contents found, this is not a valid OOXML (Office Open XML) file
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:156)
-	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:94)
-	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:132)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:319)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:59)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:290)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:286)
-	at utilities.ExcelUtilities.getStringData(ExcelUtilities.java:22)
-	at testscript.LoginTest.verifyUserIsAbleToLoginUsingValidCredentials(LoginTest.java:15)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.util.zip.ZipException: Unexpected record signature: 0X5FDE17FD
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextZipEntry(ZipArchiveInputStream.java:296)
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:152)
-	... 24 more
-... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Chrometest</h2><h3 id="m0">testscript.ManageNewsTest#VerifyUserIsAbleToEnterTheManageNews</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

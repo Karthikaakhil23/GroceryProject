@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.PageUtilities;
 
 public class AdminUsersPage {
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")WebElement AdminUserMoreinfo;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")WebElement AdminUserMoreinfo;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")WebElement NewButton;
 	@FindBy(xpath = "//input[@id='username']")WebElement Username;
 	@FindBy(xpath = "//input[@id='password']")WebElement Password;
@@ -23,30 +23,35 @@ public class AdminUsersPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickMoreInfo() 
+	/*public void clickMoreInfo() 
 	{
 		AdminUserMoreinfo.click();
-	}
-	public void clickNew()
+	}*/
+	public AdminUsersPage clickNew()
 	{
 		NewButton.click();
+		return this;
 	}
-	public void enterTheUserName(String adminUsername)
+	public AdminUsersPage enterTheUserName(String adminUsername)
 	{
 		Username.sendKeys(adminUsername);
+		return this;
 	}
-	public void enterThePassword(String adminPassword)
+	public AdminUsersPage enterThePassword(String adminPassword)
 	{
 		Password.sendKeys(adminPassword);
+		return this;
 	}
-	public void userType()
+	public AdminUsersPage userType()
 	{
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.selectByVisibleText(UserType, "Admin");
+		return this;
 	}
-	public void clickSave()
+	public AdminUsersPage clickSave()
 	{
 		Save.click();
+		return this;
 	}
 	public boolean isAlertDisplayed() 
 	{

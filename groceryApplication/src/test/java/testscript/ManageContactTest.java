@@ -5,12 +5,19 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constant;
+import pages.Homepage;
 import pages.LoginPage;
 import pages.ManageContactPage;
 import utilities.ExcelUtilities;
 
 public class ManageContactTest extends Base {
-	@Test
+	
+	ManageContactPage managecontactpage;
+	//LoginPage loginpage;
+	Homepage homepage;
+	
+	@Test(description = " To verify user is able to access managecontactpage")
 	public void verifyUserIsAbleToAccessManageContactPage() throws IOException
 	{
 		String username = ExcelUtilities.getStringData(1, 0, "loginpage");
@@ -20,22 +27,16 @@ public class ManageContactTest extends Base {
 		String address = ExcelUtilities.getStringData(1, 2, "managecontact");
 		String delivery_time = ExcelUtilities.getIntegerData(1, 3, "managecontact");
 		String delivery_charge_limit = ExcelUtilities.getIntegerData(1, 4, "managecontact");
-		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
-		loginpage.enterPassword(password);
-		loginpage.clickSignin();
 		
-		ManageContactPage managecontactpage = new ManageContactPage(driver);
-		managecontactpage.clickOnMoreInfo();
-		managecontactpage.clickOnActionIcon();
-		managecontactpage.updatePhone(phone);
-		managecontactpage.updateEmail(email);
-		managecontactpage.updateaddress(address);
-		managecontactpage.updateDeliveryTime(delivery_time);
-		managecontactpage.updateDeliveryChargeLimit(delivery_charge_limit);
-		managecontactpage.clickOnUpdateButton();
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterTheUsername(username).enterPassword(password);
+		homepage = loginpage.clickSignin();
+		
+		managecontactpage = homepage.clickOnManageContactMoreIsnfo();
+		managecontactpage.clickOnActionIcon().updatePhone(phone).updateEmail(email).updateaddress(address).updateDeliveryTime(delivery_time).updateDeliveryChargeLimit(delivery_charge_limit).clickOnUpdateButton();
+		
 		boolean alert = managecontactpage.alertDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.ALERTDISPLAYEDFORMANAGECONTACT);
 		
 	}
 

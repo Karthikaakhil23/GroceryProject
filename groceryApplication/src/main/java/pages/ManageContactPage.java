@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.PageUtilities;
 
 public class ManageContactPage {
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact' and @class=' nav-link']") WebElement ManageContactmoreinfo;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact' and @class=' nav-link']") WebElement ManageContactmoreinfo;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/contact/edit_contact?edit=1' and @class='btn btn-sm btn btn-primary btncss']") WebElement ActionIcon;
 	@FindBy(xpath = "//input[@id='phone']") WebElement Phone;
 	@FindBy(xpath = "//input[@id='email']")WebElement Email;
@@ -25,44 +25,52 @@ public class ManageContactPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickOnMoreInfo()
+	/*public void clickOnMoreInfo()
 	{
 		ManageContactmoreinfo.click();
-	}
-	public void clickOnActionIcon()
+	}*/
+	public ManageContactPage clickOnActionIcon()
 	{
 		ActionIcon.click();
+		return this;
 	}
-	public void updatePhone(String phone2)
+	public ManageContactPage updatePhone(String phone2)
 	{
 		Phone.clear();
 		Phone.sendKeys(phone2);
+		return this;
 	}
-	public void updateEmail(String email2)
+	public ManageContactPage updateEmail(String email2)
 	{
 		Email.clear();
 		Email.sendKeys(email2);
+		return this;
 	}
-	public void updateaddress(String address2)
+	public ManageContactPage updateaddress(String address2)
 	{
 		Address.clear();
 		Address.sendKeys(address2);
+		return this;
+		
 	}
-	public void updateDeliveryTime(String delivery_time)
+	public ManageContactPage updateDeliveryTime(String delivery_time)
 	{
 		DeliveryTime.clear();
 		DeliveryTime.sendKeys(delivery_time);
+		return this;
 	}
-	public void updateDeliveryChargeLimit(String delivery_charge_limit)
+	public ManageContactPage updateDeliveryChargeLimit(String delivery_charge_limit)
 	{
 		DeliveryChargeLimit.clear();
 		DeliveryChargeLimit.sendKeys(delivery_charge_limit);
+		return this;
 	}
-	public void clickOnUpdateButton()
+	public ManageContactPage clickOnUpdateButton()
 	{
 		//UpdateButton.click();
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.click(driver, UpdateButton);
+		return this;
 	}
 	public boolean alertDisplayed()
 	{

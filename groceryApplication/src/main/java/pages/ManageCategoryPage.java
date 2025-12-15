@@ -10,7 +10,7 @@ import utilities.FileUploadUtilities;
 import utilities.PageUtilities;
 
 public class ManageCategoryPage {
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']") WebElement ManageCategoryMoreInfo;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']") WebElement ManageCategoryMoreInfo;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement NewButton;
 	@FindBy(xpath = "//input[@name='category']") WebElement Category;
 	@FindBy(xpath = "//input[@name='main_img']") WebElement ChooseFileButton;
@@ -25,36 +25,41 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickOnMoreInfo()
+	/*public void clickOnMoreInfo()
 	{
 		ManageCategoryMoreInfo.click();
-	}
+	}*/
 	
-	public void clickOnNewButton()
+	public ManageCategoryPage clickOnNewButton()
 	{
 		NewButton.click();
+		return this;
 	}
-	public void enterCategory()
+	public ManageCategoryPage enterCategory()
 	{
 		Category.sendKeys("fruitsCategory");
+		return this;
 	}
-	public void chooseFileButtonClick()
+	public ManageCategoryPage chooseFileButtonClick()
 	{
 		FileUploadUtilities fileuploadutilities = new FileUploadUtilities();
 		fileuploadutilities.usingSendKeys(ChooseFileButton, Constant.TESTIMAGE);
+		return this;
 		
 		//ChooseFileButton.sendKeys("D:\\users\\user\\OneDrive\\Desktop\\fruits.png");
 		//ChooseFileButton.click();
 	}
-	public void clickOnDiscount()
+	public ManageCategoryPage clickOnDiscount()
 	{
 		Discount.click();
+		return this;
 	}
-	public void clickOnSaveButton()
+	public ManageCategoryPage clickOnSaveButton()
 	{
 		//SaveButton.click();
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.click(driver, SaveButton);
+		return this;
 	}
 	public boolean isAlertDisplayed() {
 		

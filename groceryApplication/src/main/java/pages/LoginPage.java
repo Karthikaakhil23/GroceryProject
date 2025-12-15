@@ -20,17 +20,20 @@ public class LoginPage {
 		this.driver = driver;//assign local variable to instance variable
 		PageFactory.initElements(driver, this);
 	}
-	public void enterTheUsername(String username2)
+	public LoginPage enterTheUsername(String username2)
 	{
 		Username.sendKeys(username2);
+		return this;
 	}
-	public void enterPassword(String password2)
+	public LoginPage enterPassword(String password2)
 	{
 		Password.sendKeys(password2);
+		return this;
 	}
-	public void clickSignin()
+	public Homepage clickSignin()
 	{
 		signin.click();
+		return new Homepage(driver);
 	}
 	public boolean isHomePageDisplayed()
 	{

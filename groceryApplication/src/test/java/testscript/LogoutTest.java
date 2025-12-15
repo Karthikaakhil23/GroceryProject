@@ -5,26 +5,33 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constant;
+import pages.Homepage;
 import pages.LoginPage;
 import pages.LogoutPage;
 import utilities.ExcelUtilities;
 
 public class LogoutTest extends Base {
-	@Test
+	
+	//LoginPage loginpage;
+	LogoutPage logoutpage;
+	Homepage homepage;
+	
+	@Test(description = "Used to verify user is able to logout")
 	public void verifyUserIsAbleToLogout() throws IOException
 	{
 		String username = ExcelUtilities.getStringData(1, 0, "loginpage");
 		String password = ExcelUtilities.getStringData(1, 1, "loginpage");
+		
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
-		loginpage.enterPassword(password);
-		loginpage.clickSignin();
+		loginpage.enterTheUsername(username).enterPassword(password);
+		homepage = loginpage.clickSignin();
 		
 		LogoutPage logoutpage = new LogoutPage(driver);
 		logoutpage.clickOnAdmin();
 		logoutpage.clickOnLogout();
 		boolean LoginDisplayed = logoutpage.isLoginPageDisplayed();
-		Assert.assertTrue(LoginDisplayed);
+		Assert.assertTrue(LoginDisplayed,Constant.LOGOUTFROMTHEAPPLICATION);
 	}
 
 

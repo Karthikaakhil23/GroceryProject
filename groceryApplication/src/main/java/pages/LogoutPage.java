@@ -16,13 +16,15 @@ public class LogoutPage {
 		this.driver= driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickOnAdmin()
+	public Homepage clickOnAdmin()
 	{
 		Admin.click();
+		return new Homepage(driver);
 	}
-	public void clickOnLogout()
+	public LogoutPage clickOnLogout()
 	{
 		Logout.click();
+		return this;
 	}
 	public boolean isLoginPageDisplayed()
 	{

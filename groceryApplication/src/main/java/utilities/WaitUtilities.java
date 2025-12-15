@@ -26,5 +26,18 @@ public class WaitUtilities {
 	    wait.until(ExpectedConditions.alertIsPresent());
 	}
 	
+	public void waitForAttributeContains(WebDriver driver,WebElement element) {
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+	    wait.until(ExpectedConditions.attributeContains(element, null, null));
+	}
+	
+	public void waitForAttributeToBe(WebDriver driver,WebElement element) {
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+	    wait.until(ExpectedConditions.attributeToBe(element, null, null));
+	}
+	
+	
+	
+	
 
 }
