@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtilities;
+import utilities.WaitUtilities;
 
 public class ManageContactPage {
 	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact' and @class=' nav-link']") WebElement ManageContactmoreinfo;
@@ -68,6 +69,8 @@ public class ManageContactPage {
 	public ManageContactPage clickOnUpdateButton()
 	{
 		//UpdateButton.click();
+		WaitUtilities wait = new WaitUtilities();
+		wait.waitForElementToBeClickable(driver, UpdateButton);
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.click(driver, UpdateButton);
 		return this;

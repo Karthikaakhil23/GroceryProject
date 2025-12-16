@@ -44,5 +44,5 @@ public class Homepage {
 		ManageFooterTextMoreInfo.click();
 		return new ManageFooterTextPage(driver);
 	}
-	
+	  
 }
